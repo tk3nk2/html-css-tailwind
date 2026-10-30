@@ -7,7 +7,7 @@
     <title>alert-message</title>
 </head>
 <body>
-    <section class="alert-section" aria-label="ライトモード">
+    <section class="alert-section" aria-label="アラート一覧">
     <div class="alert alert-info">
         <i class="fa-solid fa-circle-info alert-icon" aria-hidden="true"></i>
         <div class="alert-content">
@@ -53,53 +53,30 @@
     </div>
     </section>
 
-    <section class="alert-section alert-section-dark" aria-label="ダークモード">
-    <div class="alert alert-info dark">
-        <i class="fa-solid fa-circle-info alert-icon" aria-hidden="true"></i>
-        <div class="alert-content">
-            <p class="alert-title">お知らせ</p>
-            <p class="alert-body">新しいレッスンが追加されました。</p>
-        </div>
-        <button type="button" class="alert-close" aria-label="閉じる">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <div class="alert alert-success dark">
-        <i class="fa-solid fa-circle-check alert-icon" aria-hidden="true"></i>
-        <div class="alert-content">
-            <p class="alert-title">保存しました</p>
-            <p class="alert-body">変更内容が正しく反映されています。</p>
-        </div>
-        <button type="button" class="alert-close" aria-label="閉じる">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <div class="alert alert-warning dark">
-        <i class="fa-solid fa-triangle-exclamation alert-icon" aria-hidden="true"></i>
-        <div class="alert-content">
-            <p class="alert-title">注意</p>
-            <p class="alert-body">パスワードの有効期限がもうすぐ切れます。</p>
-        </div>
-        <button type="button" class="alert-close" aria-label="閉じる">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-    </div>
-
-    <div class="alert alert-danger dark">
-        <i class="fa-solid fa-circle-xmark alert-icon" aria-hidden="true"></i>
-        <div class="alert-content">
-            <p class="alert-title">エラー</p>
-            <p class="alert-body">通信に失敗しました。しばらく経ってから再度お試しください。</p>
-        </div>
-        <button type="button" class="alert-close" aria-label="閉じる">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-    </div>
-    </section>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="ダークモードに切り替え">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+    </button>
 
     <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        const alerts = document.querySelectorAll(".alert-section .alert");
+        const themeIcon = themeToggle.querySelector("i");
+
+        function setTheme(isDark) {
+            document.body.classList.toggle("theme-dark", isDark);
+            alerts.forEach((alert) => alert.classList.toggle("dark", isDark));
+            themeToggle.setAttribute(
+                "aria-label",
+                isDark ? "ライトモードに切り替え" : "ダークモードに切り替え",
+            );
+            themeIcon.classList.toggle("fa-moon", !isDark);
+            themeIcon.classList.toggle("fa-sun", isDark);
+        }
+
+        themeToggle.addEventListener("click", () => {
+            setTheme(!document.body.classList.contains("theme-dark"));
+        });
+
         document.querySelectorAll(".alert-close").forEach((button) => {
             button.addEventListener("click", (event) => {
                 event.stopPropagation();
