@@ -1,0 +1,56 @@
+/* === common setting in all alert === */
+.alert {
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid;
+    border-radius: 0.375rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.alert-title { margin: 0 0 0.25rem; }
+.alert-body { margin: 0; }
+
+/* TODO: タイトルを太字にする (font-weight) */
+.alert-title {
+    font-weight: bold;
+}
+
+/* TODO: 本文を少し小さめのサイズに (font-size) */
+.alert-body {
+    font-size: 0.9375rem;
+}
+
+/* TODO: お知らせ (青系) */
+/* background / color/ border-left-color の3つを当てる */
+.alert-info {
+    background: #eff6ff;
+    border-left-color: #2563eb;
+    color: #1e3a8a;
+}
+
+/* TODO: 成功 (緑系) */
+.alert-success {
+    background: #ecfdf5;
+    border-left-color: #059669;
+    color: #064e3b;
+}
+
+/* TODO: 注意 (黄~オレンジ系) */
+.alert-warning {
+    background: #fef3c7;
+    border-left-color: #d97706;
+    color: #78350f;
+}
+
+/* TODO: エラー (赤系) */
+.alert-danger {
+    background: #fef2f2;
+    border-left-color: #dc2626;
+    color: #7f1d1d;
+}
+
+/* TODO: マウスを乗せたら少しだけ色が変わるようにする */
+/* (:hoverを使う、背景色を少し濃くするのが一例) */
+.alert:hover {
+    filter: brightness(0.96);
+}
