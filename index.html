@@ -2,28 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>alert-message</title>
 </head>
 <body>
     <div class="alert alert-info">
-        <p class="alert-title">お知らせ</p>
-        <p class="alert-body">新しいレッスンが追加されました。</p>
+        <i class="fa-solid fa-circle-info alert-icon" aria-hidden="true"></i>
+        <div class="alert-content">
+            <p class="alert-title">お知らせ</p>
+            <p class="alert-body">新しいレッスンが追加されました。</p>
+        </div>
     </div>
 
     <div class="alert alert-success">
-        <p class="alert-title">保存しました</p>
-        <p class="alert-body">変更内容が正しく反映されています。</p>
+        <i class="fa-solid fa-circle-check alert-icon" aria-hidden="true"></i>
+        <div class="alert-content">
+            <p class="alert-title">保存しました</p>
+            <p class="alert-body">変更内容が正しく反映されています。</p>
+        </div>
     </div>
 
     <div class="alert alert-warning">
-        <p class="alert-title">注意</p>
-        <p class="alert-body">パスワードの有効期限がもうすぐ切れます。</p>
+        <i class="fa-solid fa-triangle-exclamation alert-icon" aria-hidden="true"></i>
+        <div class="alert-content">
+            <p class="alert-title">注意</p>
+            <p class="alert-body">パスワードの有効期限がもうすぐ切れます。</p>
+        </div>
     </div>
 
     <div class="alert alert-danger">
-        <p class="alert-title">エラー</p>
-        <p class="alert-body">通信に失敗しました。しばらく経ってから再度お試しください。</p>
+        <i class="fa-solid fa-circle-xmark alert-icon" aria-hidden="true"></i>
+        <div class="alert-content">
+            <p class="alert-title">エラー</p>
+            <p class="alert-body">通信に失敗しました。しばらく経ってから再度お試しください。</p>
+        </div>
     </div>
 </body>
 </html>
