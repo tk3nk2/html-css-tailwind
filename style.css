@@ -1,3 +1,61 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f8fafc;
+    transition: background-color 0.2s ease;
+}
+
+body.theme-dark {
+    background: #0f172a;
+}
+
+.alert-section {
+    max-width: 40rem;
+}
+
+.theme-toggle {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 9999px;
+    background: #1e293b;
+    color: #f8fafc;
+    font-size: 1.125rem;
+    cursor: pointer;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 6px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    background: #334155;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+body.theme-dark .theme-toggle {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+body.theme-dark .theme-toggle:hover {
+    background: #e2e8f0;
+}
+
 /* === common setting in all alert === */
 .alert {
     display: flex;
@@ -122,4 +180,62 @@
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.06),
         0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* === dark mode (add class "dark" to .alert) === */
+.alert.dark {
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.35),
+        0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.alert.dark:hover {
+    filter: brightness(1.08);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.alert.dark .alert-close:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.alert.dark.alert-info {
+    background: #1e3a8a;
+    border-left-color: #60a5fa;
+    color: #dbeafe;
+}
+
+.alert.dark.alert-info .alert-icon {
+    color: #93c5fd;
+}
+
+.alert.dark.alert-success {
+    background: #064e3b;
+    border-left-color: #34d399;
+    color: #d1fae5;
+}
+
+.alert.dark.alert-success .alert-icon {
+    color: #6ee7b7;
+}
+
+.alert.dark.alert-warning {
+    background: #78350f;
+    border-left-color: #fbbf24;
+    color: #fef3c7;
+}
+
+.alert.dark.alert-warning .alert-icon {
+    color: #fcd34d;
+}
+
+.alert.dark.alert-danger {
+    background: #7f1d1d;
+    border-left-color: #f87171;
+    color: #fee2e2;
+}
+
+.alert.dark.alert-danger .alert-icon {
+    color: #fca5a5;
 }
