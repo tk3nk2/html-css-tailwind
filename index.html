@@ -13,6 +13,9 @@
             <p class="alert-title">お知らせ</p>
             <p class="alert-body">新しいレッスンが追加されました。</p>
         </div>
+        <button type="button" class="alert-close" aria-label="閉じる">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
     </div>
 
     <div class="alert alert-success">
@@ -21,6 +24,9 @@
             <p class="alert-title">保存しました</p>
             <p class="alert-body">変更内容が正しく反映されています。</p>
         </div>
+        <button type="button" class="alert-close" aria-label="閉じる">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
     </div>
 
     <div class="alert alert-warning">
@@ -29,6 +35,9 @@
             <p class="alert-title">注意</p>
             <p class="alert-body">パスワードの有効期限がもうすぐ切れます。</p>
         </div>
+        <button type="button" class="alert-close" aria-label="閉じる">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
     </div>
 
     <div class="alert alert-danger">
@@ -37,6 +46,18 @@
             <p class="alert-title">エラー</p>
             <p class="alert-body">通信に失敗しました。しばらく経ってから再度お試しください。</p>
         </div>
+        <button type="button" class="alert-close" aria-label="閉じる">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
     </div>
+
+    <script>
+        document.querySelectorAll(".alert-close").forEach((button) => {
+            button.addEventListener("click", (event) => {
+                event.stopPropagation();
+                button.closest(".alert")?.remove();
+            });
+        });
+    </script>
 </body>
 </html>
